@@ -1695,8 +1695,8 @@ function compareFun(DOB, DOID) {
 
 // start of addition
 function displayW8W9FormUpload() {
-  const countryOfResidence = BeneficiaryList[0].countryOfResidence;
-  const countryOfCitizenship = BeneficiaryList[0].countryOfCitizenship;
+  const countryOfResidence = BeneficiaryList[0].countryResident;
+  const countryOfCitizenship = BeneficiaryList[0].citizenship;
   console.log(countryOfResidence, countryOfCitizenship);
   w8w9FormUpload.classList.add("w8-w9-form-upload-hidden");
 

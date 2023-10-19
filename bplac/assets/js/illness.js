@@ -714,8 +714,8 @@ function checkDob(dob, date1, date2, date3) {
 
 // start of addition
 function displayW8W9FormUpload() {
-  const countryOfResidence = InsuredInformation.countryOfResidence;
-  const countryOfCitizenship = InsuredInformation.countryOfCitizenship;
+  const countryOfResidence = InsuredInformation.countryResident;
+  const countryOfCitizenship = InsuredInformation.citizenship;
   console.log(countryOfResidence, countryOfCitizenship);
   w8w9FormUpload.classList.add("w8-w9-form-upload-hidden");
 
