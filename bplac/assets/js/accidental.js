@@ -3318,6 +3318,7 @@ function finalSubmitCall() {
   });
   finalData["source"] = source;
   finalData["data"] = raw;
+  console.log("final data", finalData);
   timer(0, 2).then(async () => {
     window.parent.postMessage(
       JSON.stringify({
