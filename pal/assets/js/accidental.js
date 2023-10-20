@@ -231,7 +231,10 @@ countryOfResidence.addEventListener("change", function () {
     w8Form.classList.remove("w8-form-hidden");
   }
 
-  if (selectedResidenceCountry === "China") {
+  if (
+    selectedResidenceCountry === "China" ||
+    selectedCitizenshipCountry === "China"
+  ) {
     privacyTermsConditions.innerHTML = `I have read and understood the Terms and Conditions in the <a href="#accidental_data_privacy">AIA Privacy Addendum for Mainland China</a>.`;
     chinaPrivacyNotice.classList.remove("china-privacy-notice-hidden");
   } else {
