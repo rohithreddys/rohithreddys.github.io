@@ -792,7 +792,7 @@ function formatAMPM(date) {
 
 // start of addition
 function displayW8W9FormUpload() {
-  const countryOfResidence = InsuredInformation.countryResident;
+  const countryOfResidence = InsuredInformation.country_resident;
   const countryOfCitizenship = InsuredInformation.citizenship;
   console.log(countryOfResidence, countryOfCitizenship);
   w8w9FormUpload.classList.add("w8-w9-form-upload-hidden");
@@ -1170,8 +1170,8 @@ function handleForm(event) {
     InsuredInformation["accidentPlace"] = field_POA;
     // start of addition
     InsuredInformation["citizenship"] = country_of_citizenship;
-    InsuredInformation["countryResident"] = country_of_residence;
-    InsuredInformation["hasForm"] = 0;
+    InsuredInformation["country_resident"] = country_of_residence;
+    InsuredInformation["has_form"] = 0;
     // end of addition
     document.getElementById("user_mobile").innerHTML = field_mobileNum.replace(
       /.(?=.{4})/g,
@@ -1736,7 +1736,7 @@ file5.onchange = async function (e) {
 
 // start of addition
 file8.onchange = async function (e) {
-  const countryOfResidence = InsuredInformation.countryResident;
+  const countryOfResidence = InsuredInformation.country_resident;
   const countryOfCitizenship = InsuredInformation.citizenship;
   console.log(countryOfResidence, countryOfCitizenship);
   let docDesc;
@@ -1761,7 +1761,7 @@ file8.onchange = async function (e) {
       var pageId = 1;
       var sizevalid = isFileSizeValid(file, buttonNum);
       if (sizevalid) {
-        InsuredInformation.hasForm = 1;
+        InsuredInformation.has_form = 1;
         if (ext == "jpg") {
           let fileName = referenceNumber + "-" + docType + "-" + tranType;
           let accident = {};

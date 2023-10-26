@@ -1604,8 +1604,8 @@ function handleFormAddBeneficiary(event) {
       // end of comment
       // start of addition
       (beneficiary["citizenship"] = field_addBeneficiaryCOC),
-      (beneficiary["countryResident"] = field_addBeneficiaryCOR),
-      (beneficiary["hasForm"] = 0),
+      (beneficiary["country_resident"] = field_addBeneficiaryCOR),
+      (beneficiary["has_form"] = 0),
       // end of addition
       (beneficiary["sex"] = field_addBeneficiarySex),
       (beneficiary["relationship"] = field_addBeneficiaryRelationToDeceased),
@@ -1732,7 +1732,7 @@ function displayW8W9FormUpload() {
     "w8-w9-form-upload-message"
   );
 
-  const countryOfResidence = BeneficiaryList[0].countryResident;
+  const countryOfResidence = BeneficiaryList[0].country_resident;
   const countryOfCitizenship = BeneficiaryList[0].citizenship;
   console.log(countryOfResidence, countryOfCitizenship);
   w8w9FormUpload.classList.add("w8-w9-form-upload-hidden");
@@ -1758,7 +1758,7 @@ function displayBeneficiaryW8W9FormUpload() {
     "beneficiary-w8-w9-form-upload-message"
   );
 
-  const countryOfResidence = BeneficiaryList[buttonCount].countryResident;
+  const countryOfResidence = BeneficiaryList[buttonCount].country_resident;
   const countryOfCitizenship = BeneficiaryList[buttonCount].citizenship;
   console.log(countryOfResidence, countryOfCitizenship);
   beneficiaryW8w9FormUpload.classList.add(
@@ -2392,8 +2392,8 @@ function handleForm(event) {
 
       // start of addition
       (beneficiary["citizenship"] = field_BeneficiaryCOC),
-      (beneficiary["countryResident"] = field_BeneficiaryCOR),
-      (beneficiary["hasForm"] = 0),
+      (beneficiary["country_resident"] = field_BeneficiaryCOR),
+      (beneficiary["has_form"] = 0),
       // end of addition
       (beneficiary["sex"] = $("select#field_BeneficiarySex option")
         .filter(":selected")
@@ -3123,7 +3123,7 @@ file6.onchange = async function (e) {
 
 // start of addition
 file14.onchange = async function (e) {
-  const countryOfResidence = BeneficiaryList[0].countryResident;
+  const countryOfResidence = BeneficiaryList[0].country_resident;
   const countryOfCitizenship = BeneficiaryList[0].citizenship;
   console.log(countryOfResidence, countryOfCitizenship);
   let docDesc;
@@ -3148,7 +3148,7 @@ file14.onchange = async function (e) {
       var pageId = 1;
       var sizevalid = isFileSizeValid(file, buttonNum);
       if (sizevalid) {
-        BeneficiaryList[0].hasForm = 1;
+        BeneficiaryList[0].has_form = 1;
         if (ext == "jpg") {
           let fileName = referenceNumber + "-" + docType + "-" + tranType;
 
@@ -3667,7 +3667,7 @@ file12.onchange = async function (e) {
 
 // start of addition
 file15.onchange = async function (e) {
-  const countryOfResidence = BeneficiaryList[buttonCount].countryResident;
+  const countryOfResidence = BeneficiaryList[buttonCount].country_resident;
   const countryOfCitizenship = BeneficiaryList[buttonCount].citizenship;
   console.log(countryOfResidence, countryOfCitizenship);
   let docDesc;
@@ -3692,7 +3692,7 @@ file15.onchange = async function (e) {
       var pageId = 4;
       var sizevalid = isFileSizeValid(file, buttonNum);
       if (sizevalid) {
-        BeneficiaryList[buttonCount].hasForm = 1;
+        BeneficiaryList[buttonCount].has_form = 1;
         if (ext == "jpg") {
           let fileName = referenceNumber + "-" + docType + "-" + tranType;
 
