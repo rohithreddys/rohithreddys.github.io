@@ -248,7 +248,7 @@ beneficiaryCountryOfCitizenship.addEventListener("change", function () {
   );
 
   beneficiaryW8Form.classList.add("beneficiary-w8-form-hidden");
-  beneficiaryW9Form.classList.add("beneficiary-9-form-hidden");
+  beneficiaryW9Form.classList.add("beneficiary-w9-form-hidden");
   beneficiaryChinaPrivacyNotice.classList.add(
     "beneficiary-china-privacy-notice-hidden"
   );

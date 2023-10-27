@@ -163,6 +163,30 @@ svg {
 .form-message {
   font-size: 12px;
 }
+
+.beneficiary-w8-form-hidden {
+  display: none;
+}
+
+.beneficiary-w9-form-hidden {
+  display: none;
+}
+
+.beneficiary-w8-w9-form-upload-hidden {
+  display: none;
+}
+
+.beneficiary-china-privacy-notice-hidden {
+  display: none;
+}
+
+.beneficiary-general-privacy-notice-hidden {
+  display: none;
+}
+
+.beneficiary-form-message {
+  font-size: 12px;
+}
 /* end of addition */
 
 /* start of comment */
