@@ -1287,7 +1287,7 @@ function otpTimerFunction() {
         '<p id="otp-text">Your request is taking a while to get through due to intermittent connection. Stay with us! <br> Please refresh the page and re-submit your request to continue.</p>';
       $("#fallbackMessagePopUp").modal("show");
     }
-  }, 60000);
+  }, 300000);
 }
 //to call preSubmit api
 function preSubmitCall() {
