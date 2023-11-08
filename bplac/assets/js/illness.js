@@ -1106,7 +1106,11 @@ function handleForm(event) {
     // start of addition
     InsuredInformation["citizenship"] = country_of_citizenship;
     InsuredInformation["country_resident"] = country_of_residence;
-    InsuredInformation["has_form"] = 0;
+    InsuredInformation["has_form"] =
+      country_of_citizenship === "United States of America (USA)" ||
+      country_of_residence === "United States of America (USA)"
+        ? 0
+        : 2;
     // end of addition
     // for otp screen
     document.getElementById("user_mobile").innerHTML = field_mobileNum.replace(

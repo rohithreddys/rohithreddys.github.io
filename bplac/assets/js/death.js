@@ -1551,7 +1551,11 @@ function handleFormAddBeneficiary(event) {
       // start of addition
       (beneficiary["citizenship"] = field_addBeneficiaryCOC),
       (beneficiary["country_resident"] = field_addBeneficiaryCOR),
-      (beneficiary["has_form"] = 0),
+      (beneficiary["has_form"] =
+        field_addBeneficiaryCOC === "United States of America (USA)" ||
+        field_addBeneficiaryCOR === "United States of America (USA)"
+          ? 0
+          : 2),
       // end of addition
       (beneficiary["sex"] = field_addBeneficiarySex),
       (beneficiary["relationship"] = field_addBeneficiaryRelationToDeceased),
@@ -2352,7 +2356,11 @@ function handleForm(event) {
       // start of addition
       (beneficiary["citizenship"] = field_BeneficiaryCOC),
       (beneficiary["country_resident"] = field_BeneficiaryCOR),
-      (beneficiary["has_form"] = 0),
+      (beneficiary["has_form"] =
+        field_BeneficiaryCOC === "United States of America (USA)" ||
+        field_BeneficiaryCOR === "United States of America (USA)"
+          ? 0
+          : 2),
       // end of addition
 
       (beneficiary["sex"] = $("select#field_BeneficiarySex option")
