@@ -2247,7 +2247,7 @@ function preSubmitCall() {
   otpTimerFunction();
 
   window.addEventListener("message", function (eventData) {
-    // console.log(event.data.event_code)
+    console.log(eventData.origin, "presubmit event origin");
     try {
       if (eventData.data) {
         let event = JSON.parse(eventData.data);
@@ -2335,6 +2335,7 @@ function finalSubmitCall() {
   });
 
   window.addEventListener("message", function (eventData) {
+    console.log(eventData.origin, "finalsubmit event origin");
     try {
       if (eventData.data) {
         let event = JSON.parse(eventData.data);
@@ -2642,6 +2643,7 @@ function getBankDetails() {
 
   window.addEventListener("message", function (eventData) {
     console.log("receiving payout  event in acc");
+    console.log(eventData.origin, "getpayoutdetails event origin");
     // console.log(event.data.event_code)
     try {
       if (eventData.data) {
@@ -3248,6 +3250,7 @@ function resendOtp(type) {
 
     window.addEventListener("message", function (eventData) {
       console.log("receiving otp event in acc");
+      console.log(eventData.origin, "resetotp event origin");
       // console.log(event.data.event_code)
       try {
         if (eventData.data) {
@@ -3393,6 +3396,7 @@ function submitOtp() {
   // document.getElementById('time-left').style.display = 'none'
   window.addEventListener("message", function (eventData) {
     console.log("receiving otp event in acc");
+    console.log(eventData.origin, "validateotp event origin");
     // console.log(event.data.event_code)
     try {
       if (eventData.data) {
