@@ -1571,7 +1571,7 @@ function handleFormAddBeneficiary(event) {
     BeneficiaryList.push(beneficiary);
 
     $("#customer_Name").text(
-      `Hi ${customName}. Hang in there as we process your request. Expect an SMS from us within 7 to 10 working on the status of your request.`
+      `Hi ${customName}. We have received your request and will provide an update within 7 to 10 working days. This will be sent to your mobile number on record. Note that we may require additional documents to support your request.`
     );
     if (buttonCount == 1) {
       data1 = dataBen;

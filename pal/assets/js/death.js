@@ -1632,7 +1632,7 @@ function handleFormAddBeneficiary(event) {
       ben_name_req_progress = "";
       // $('#user_name').text = ben_name_req_progress;
       $("#customer_Name").text(
-        `Hang in there as we are now processing your request. Kindly expect an SMS update from us within 7 to 10 working days on the status of your request.`
+        `We have received your request and will provide an update within 7 to 10 working days. This will be sent to your mobile number on record. Note that we may require additional documents to support your request.`
       );
     }
     dataReset(
@@ -2436,7 +2436,7 @@ function handleForm(event) {
     $("#death_data_privacy").hide();
     $("#payment").show();
     $("#customer_Name").text(
-      `Hi ${field_BeneficiaryFirstName}, Hang in there as we are now processing your request. Kindly expect an SMS update from us within 7 to 10 working days on the status of your request.`
+      `Hi ${field_BeneficiaryFirstName},We have received your request and will provide an update within 7 to 10 working days. This will be sent to your mobile number on record. Note that we may require additional documents to support your request.`
     );
     console.log("beneficiary obj", beneficiary);
     console.log("beneficiary list", BeneficiaryList);

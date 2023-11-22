@@ -1165,7 +1165,7 @@ function handleForm(event) {
     $("#requirements").show();
     /*  $('#requirements')[0].scrollIntoView(true); */
     $("#customer_Name").text(
-      `Hi ${field_firstName}, Hang in there as we are now processing your request. Kindly expect an SMS update from us within 7 to 10 working days on the status of your request.`
+      `Hi ${field_firstName}, We have received your request and will provide an update within 7 to 10 working days. This will be sent to your mobile number on record. Note that we may require additional documents to support your request.`
     );
     console.log("Data -> ", data);
 
