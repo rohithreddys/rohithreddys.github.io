@@ -3400,7 +3400,7 @@ function submitOtp() {
   // document.getElementById('time-left').style.display = 'none'
   window.addEventListener("message", function (eventData) {
     console.log("receiving otp event in acc");
-    // console.log(eventData.origin, "validateotp event origin");
+    console.log(eventData.origin, "validateotp event origin");
     if (eventData.source !== "https://app.yellowmessenger.com") return;
     // console.log(event.data.event_code)
     try {
