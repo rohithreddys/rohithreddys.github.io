@@ -2951,6 +2951,7 @@ function resendOtp(type) {
 
     window.addEventListener("message", function (eventData) {
       console.log("receiving otp event in acc");
+      console.log(eventData, "event data");
       // console.log(event.data.event_code)
       try {
         if (eventData.data) {
