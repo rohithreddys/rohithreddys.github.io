@@ -2337,7 +2337,7 @@ function finalSubmitCall() {
 
   window.addEventListener("message", function (eventData) {
     // console.log(eventData.origin, "finalsubmit event origin");
-    if (eventData.source !== "https://app.yellowmessenger.com") return;
+    if (eventData.origin !== "https://app.yellowmessenger.com") return;
     try {
       if (eventData.data) {
         let event = JSON.parse(eventData.data);
@@ -3254,7 +3254,7 @@ function resendOtp(type) {
     window.addEventListener("message", function (eventData) {
       console.log("receiving otp event in acc");
       // console.log(eventData.origin, "resetotp event origin");
-      if (eventData.source !== "https://app.yellowmessenger.com") return;
+      if (eventData.origin !== "https://app.yellowmessenger.com") return;
       // console.log(event.data.event_code)
       try {
         if (eventData.data) {
@@ -3401,7 +3401,7 @@ function submitOtp() {
   window.addEventListener("message", function (eventData) {
     console.log(eventData.origin, "validateotp event origin");
     console.log("receiving otp event in acc");
-    if (eventData.source !== "https://app.yellowmessenger.com") return;
+    if (eventData.origin !== "https://app.yellowmessenger.com") return;
     // console.log(event.data.event_code)
     try {
       if (eventData.data) {

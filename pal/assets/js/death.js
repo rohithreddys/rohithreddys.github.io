@@ -965,7 +965,7 @@ function preSubmitCall() {
   otpTimerFunction();
   window.addEventListener("message", function (eventData) {
     // console.log(event.data.event_code)
-    if (eventData.source !== "https://app.yellowmessenger.com") return;
+    if (eventData.origin !== "https://app.yellowmessenger.com") return;
     try {
       if (eventData.data) {
         let event = JSON.parse(eventData.data);
@@ -1056,7 +1056,7 @@ function finalSubmitCall() {
     );
   });
   window.addEventListener("message", function (eventData) {
-    if (eventData.source !== "https://app.yellowmessenger.com") return;
+    if (eventData.origin !== "https://app.yellowmessenger.com") return;
     try {
       if (eventData.data) {
         let event = JSON.parse(eventData.data);
@@ -6033,7 +6033,7 @@ function resendOtp(type) {
     window.addEventListener("message", function (eventData) {
       console.log("receiving otp event in acc");
       // console.log(event.data.event_code)
-      if (eventData.source !== "https://app.yellowmessenger.com") return;
+      if (eventData.origin !== "https://app.yellowmessenger.com") return;
       try {
         if (eventData.data) {
           let event = JSON.parse(eventData.data);
@@ -6121,7 +6121,7 @@ function submitOtp() {
 
   window.addEventListener("message", function (eventData) {
     console.log("receiving otp event in death");
-    if (eventData.source !== "https://app.yellowmessenger.com") return;
+    if (eventData.origin !== "https://app.yellowmessenger.com") return;
     // console.log(event.data.event_code)
     try {
       if (eventData.data) {
