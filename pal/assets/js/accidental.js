@@ -2241,13 +2241,14 @@ function preSubmitCall() {
         },
       }),
     }),
-    "*"
+    "https://app.yellowmessenger.com"
   );
 
   otpTimerFunction();
 
   window.addEventListener("message", function (eventData) {
-    console.log(eventData.origin, "presubmit event origin");
+    // console.log(eventData.origin, "presubmit event origin");
+    if (eventData.origin !== "https://app.yellowmessenger.com") return;
     try {
       if (eventData.data) {
         let event = JSON.parse(eventData.data);
@@ -2329,13 +2330,14 @@ function finalSubmitCall() {
           },
         }),
       }),
-      "*"
+      "https://app.yellowmessenger.com"
     );
     timer(2, 85).then(async () => {});
   });
 
   window.addEventListener("message", function (eventData) {
-    console.log(eventData.origin, "finalsubmit event origin");
+    // console.log(eventData.origin, "finalsubmit event origin");
+    if (eventData.source !== "https://app.yellowmessenger.com") return;
     try {
       if (eventData.data) {
         let event = JSON.parse(eventData.data);
@@ -2638,12 +2640,13 @@ function getBankDetails() {
         },
       }),
     }),
-    "*"
+    "https://app.yellowmessenger.com"
   );
 
   window.addEventListener("message", function (eventData) {
     console.log("receiving payout  event in acc");
-    console.log(eventData.origin, "getpayoutdetails event origin");
+    // console.log(eventData.origin, "getpayoutdetails event origin");
+    if (eventData.origin !== "https://app.yellowmessenger.com") return;
     // console.log(event.data.event_code)
     try {
       if (eventData.data) {
@@ -3245,12 +3248,13 @@ function resendOtp(type) {
           },
         }),
       }),
-      "*"
+      "https://app.yellowmessenger.com"
     );
 
     window.addEventListener("message", function (eventData) {
       console.log("receiving otp event in acc");
-      console.log(eventData.origin, "resetotp event origin");
+      // console.log(eventData.origin, "resetotp event origin");
+      if (eventData.source !== "https://app.yellowmessenger.com") return;
       // console.log(event.data.event_code)
       try {
         if (eventData.data) {
@@ -3390,13 +3394,14 @@ function submitOtp() {
         },
       }),
     }),
-    "*"
+    "https://app.yellowmessenger.com"
   );
 
   // document.getElementById('time-left').style.display = 'none'
   window.addEventListener("message", function (eventData) {
     console.log("receiving otp event in acc");
-    console.log(eventData.origin, "validateotp event origin");
+    // console.log(eventData.origin, "validateotp event origin");
+    if (eventData.source !== "https://app.yellowmessenger.com") return;
     // console.log(event.data.event_code)
     try {
       if (eventData.data) {

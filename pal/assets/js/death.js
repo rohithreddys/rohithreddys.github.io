@@ -958,13 +958,14 @@ function preSubmitCall() {
           },
         }),
       }),
-      "*"
+      "https://app.yellowmessenger.com"
     );
     timer(2, 30).then(async () => {});
   });
   otpTimerFunction();
   window.addEventListener("message", function (eventData) {
     // console.log(event.data.event_code)
+    if (eventData.source !== "https://app.yellowmessenger.com") return;
     try {
       if (eventData.data) {
         let event = JSON.parse(eventData.data);
@@ -1051,10 +1052,11 @@ function finalSubmitCall() {
           },
         }),
       }),
-      "*"
+      "https://app.yellowmessenger.com"
     );
   });
   window.addEventListener("message", function (eventData) {
+    if (eventData.source !== "https://app.yellowmessenger.com") return;
     try {
       if (eventData.data) {
         let event = JSON.parse(eventData.data);
@@ -6025,12 +6027,13 @@ function resendOtp(type) {
           },
         }),
       }),
-      "*"
+      "https://app.yellowmessenger.com"
     );
 
     window.addEventListener("message", function (eventData) {
       console.log("receiving otp event in acc");
       // console.log(event.data.event_code)
+      if (eventData.source !== "https://app.yellowmessenger.com") return;
       try {
         if (eventData.data) {
           let event = JSON.parse(eventData.data);
@@ -6113,11 +6116,12 @@ function submitOtp() {
         },
       }),
     }),
-    "*"
+    "https://app.yellowmessenger.com"
   );
 
   window.addEventListener("message", function (eventData) {
     console.log("receiving otp event in death");
+    if (eventData.source !== "https://app.yellowmessenger.com") return;
     // console.log(event.data.event_code)
     try {
       if (eventData.data) {
