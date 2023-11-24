@@ -617,14 +617,14 @@ function checkLength(evt, max_Length) {
   }
 }
 
-function fieldCheckLength(field, maxLength) {
-  var length = field.length;
-  if (length > maxLength) {
-    return true;
-  } else {
-    return false;
-  }
-}
+// function fieldCheckLength(field, maxLength) {
+//   var length = field.length;
+//   if (length > maxLength) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
 
 function detection(evt) {
   id = evt.target.id;
