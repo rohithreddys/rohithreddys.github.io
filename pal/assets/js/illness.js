@@ -3,7 +3,7 @@ var stepper3
 var stepper4
 var stepperForm
 var stepperFormEl */
-const DOMPurify = require("dompurify");
+// const DOMPurify = require("dompurify");
 
 var currSeconds = 0;
 
