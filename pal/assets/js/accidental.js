@@ -681,14 +681,14 @@ function onlyNumberValidate(input) {
   }
 }
 
-function fieldCheckLength(field, maxLength) {
-  var length = field.length;
-  if (length > maxLength) {
-    return true;
-  } else {
-    return false;
-  }
-}
+// function fieldCheckLength(field, maxLength) {
+//   var length = field.length;
+//   if (length > maxLength) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
 
 function checkActualTime(field2_TOA, field3_DOA) {
   var today = new Date();
