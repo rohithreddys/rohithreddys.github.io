@@ -2547,7 +2547,7 @@ function preSubmitCall() {
               // })
             } else {
               document.getElementById("returnMessage").innerHTML =
-                DOMPurify.sanitize(event.data.returnMessage);
+                event.data.returnMessage;
               $("#invalidReturnCode").modal("show");
             }
           }
@@ -2656,7 +2656,7 @@ function finalSubmitCall() {
             });
           } else {
             document.getElementById("returnMessage").innerHTML =
-              DOMPurify.sanitize(event.data.returnMessage);
+              event.data.returnMessage;
             $("#invalidReturnCode").modal("show");
           }
         } else {
@@ -2946,7 +2946,7 @@ function resendOtp(type) {
               $("#otpExpiry").modal("hide");
               $("#invalidOtp").modal("hide");
               document.getElementById("returnMessage").innerHTML =
-                DOMPurify.sanitize(event.data.returnMessage);
+                event.data.returnMessage;
               $("#invalidReturnCode").modal("show");
               // $('#otpPopUp').modal('hide');
             }
@@ -3088,7 +3088,7 @@ function submitOtp() {
           } else {
             $("#invalidOtp").modal("hide");
             document.getElementById("returnMessage").innerHTML =
-              DOMPurify.sanitize(event.data.returnMessage);
+              event.data.returnMessage;
             $("#invalidReturnCode").modal("show");
           }
         } else {

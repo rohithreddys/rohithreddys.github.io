@@ -1,4 +1,4 @@
-const DOMPurify = require("dompurify");
+// const DOMPurify = require("dompurify");
 
 var form = document.getElementById("death__form");
 var death__form_addBeneficiary = document.getElementById(
@@ -999,7 +999,7 @@ function preSubmitCall() {
               });
             } else {
               document.getElementById("returnMessage").innerHTML =
-                DOMPurify.sanitize(event.data.returnMessage);
+                event.data.returnMessage;
               $("#invalidReturnCode").modal("show");
             }
           }
@@ -1108,7 +1108,7 @@ function finalSubmitCall() {
             });
           } else {
             document.getElementById("returnMessage").innerHTML =
-              DOMPurify.sanitize(event.data.returnMessage);
+              event.data.returnMessage;
             $("#invalidReturnCode").modal("show");
             // $("#popUp").modal("show");
           }
@@ -6055,7 +6055,7 @@ function resendOtp(type) {
               $("#invalidOtp").modal("hide");
               $("#otpExpiry").modal("hide");
               document.getElementById("returnMessage").innerHTML =
-                DOMPurify.sanitize(event.data.returnMessage);
+                event.data.returnMessage;
               $("#invalidReturnCode").modal("show");
               // $('#otpPopUp').modal('hide');
             }
@@ -6155,7 +6155,7 @@ function submitOtp() {
           } else {
             $("#invalidOtp").modal("hide");
             document.getElementById("returnMessage").innerHTML =
-              DOMPurify.sanitize(event.data.returnMessage);
+              event.data.returnMessage;
             $("#invalidReturnCode").modal("show");
           }
         } else {
