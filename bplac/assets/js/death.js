@@ -1,3 +1,5 @@
+const DOMPurify = require("dompurify");
+
 var form = document.getElementById("death__form");
 var death__form_addBeneficiary = document.getElementById(
   "death__form_addBeneficiary"
@@ -720,7 +722,7 @@ function preSubmitCall() {
               });
             } else {
               document.getElementById("returnMessage").innerHTML =
-                event.data.returnMessage;
+                DOMPurify.sanitize(event.data.returnMessage);
               $("#invalidReturnCode").modal("show");
             }
           }
@@ -828,7 +830,7 @@ function finalSubmitCall() {
             });
           } else {
             document.getElementById("returnMessage").innerHTML =
-              event.data.returnMessage;
+              DOMPurify.sanitize(event.data.returnMessage);
             $("#invalidReturnCode").modal("show");
             // $("#popUp").modal("show");
           }
@@ -5898,7 +5900,7 @@ function resendOtp(type) {
             } else {
               $("#otpExpiry").modal("hide");
               document.getElementById("returnMessage").innerHTML =
-                event.data.returnMessage;
+                DOMPurify.sanitize(event.data.returnMessage);
               $("#invalidReturnCode").modal("show");
               // $('#otpPopUp').modal('hide');
             }
@@ -6050,7 +6052,7 @@ function submitOtp() {
             document.getElementById("otp").value = "";
           } else {
             document.getElementById("returnMessage").innerHTML =
-              event.data.returnMessage;
+              DOMPurify.sanitize(event.data.returnMessage);
             $("#invalidReturnCode").modal("show");
           }
         } else {

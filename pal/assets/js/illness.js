@@ -3,6 +3,7 @@ var stepper3
 var stepper4
 var stepperForm
 var stepperFormEl */
+const DOMPurify = require("dompurify");
 
 var currSeconds = 0;
 
@@ -2546,7 +2547,7 @@ function preSubmitCall() {
               // })
             } else {
               document.getElementById("returnMessage").innerHTML =
-                event.data.returnMessage;
+                DOMPurify.sanitize(event.data.returnMessage);
               $("#invalidReturnCode").modal("show");
             }
           }
@@ -2655,7 +2656,7 @@ function finalSubmitCall() {
             });
           } else {
             document.getElementById("returnMessage").innerHTML =
-              event.data.returnMessage;
+              DOMPurify.sanitize(event.data.returnMessage);
             $("#invalidReturnCode").modal("show");
           }
         } else {
@@ -2945,7 +2946,7 @@ function resendOtp(type) {
               $("#otpExpiry").modal("hide");
               $("#invalidOtp").modal("hide");
               document.getElementById("returnMessage").innerHTML =
-                event.data.returnMessage;
+                DOMPurify.sanitize(event.data.returnMessage);
               $("#invalidReturnCode").modal("show");
               // $('#otpPopUp').modal('hide');
             }
@@ -3087,7 +3088,7 @@ function submitOtp() {
           } else {
             $("#invalidOtp").modal("hide");
             document.getElementById("returnMessage").innerHTML =
-              event.data.returnMessage;
+              DOMPurify.sanitize(event.data.returnMessage);
             $("#invalidReturnCode").modal("show");
           }
         } else {

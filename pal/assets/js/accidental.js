@@ -3,6 +3,7 @@ var stepper3
 var stepper4
 var stepperForm
 var stepperFormEl */
+const DOMPurify = require("dompurify");
 
 var form = document.getElementById("accidental__form");
 var form_Bank = document.getElementById("bank_form");
@@ -2274,7 +2275,7 @@ function preSubmitCall() {
               // })
             } else {
               document.getElementById("returnMessage").innerHTML =
-                event.data.returnMessage;
+                DOMPurify.sanitize(event.data.returnMessage);
               $("#invalidReturnCode").modal("show");
             }
           }
@@ -2388,7 +2389,7 @@ function finalSubmitCall() {
           } else {
             // alert(event.data.returnMessage + 'returnCode not 0 ')
             document.getElementById("returnMessage").innerHTML =
-              event.data.returnMessage;
+              DOMPurify.sanitize(event.data.returnMessage);
             $("#invalidReturnCode").modal("show");
           }
         } else {
@@ -3275,7 +3276,7 @@ function resendOtp(type) {
               $("#invalidOtp").modal("hide");
               $("#otpExpiry").modal("hide");
               document.getElementById("returnMessage").innerHTML =
-                event.data.returnMessage;
+                DOMPurify.sanitize(event.data.returnMessage);
               $("#invalidReturnCode").modal("show");
               // $('#otpPopUp').modal('hide');
             }
@@ -3439,7 +3440,7 @@ function submitOtp() {
           } else {
             $("#invalidOtp").modal("hide");
             document.getElementById("returnMessage").innerHTML =
-              event.data.returnMessage;
+              DOMPurify.sanitize(event.data.returnMessage);
             $("#invalidReturnCode").modal("show");
           }
         } else {
