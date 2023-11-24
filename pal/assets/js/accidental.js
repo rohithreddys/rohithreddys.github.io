@@ -689,7 +689,7 @@ function onlyNumberValidate(input) {
 //     return false;
 //   }
 // }
-
+// console.log
 function checkActualTime(field2_TOA, field3_DOA) {
   var today = new Date();
   var currentYear = today.getFullYear();
