@@ -4,6 +4,8 @@ var stepper4
 var stepperForm
 var stepperFormEl */
 
+const DOMPurify = require("dompurify");
+
 var form = document.getElementById("accidental__form");
 var form_Bank = document.getElementById("bank_form");
 var listCheckBox = document.querySelector("#upload_invalidCheck_1");
@@ -2972,7 +2974,7 @@ function resendOtp(type) {
             } else {
               $("#otpExpiry").modal("hide");
               document.getElementById("returnMessage").innerHTML =
-                event.data.returnMessage;
+                DOMPurify.sanitize(event.data.returnMessage);
               $("#invalidReturnCode").modal("show");
               // $('#otpPopUp').modal('hide');
             }
@@ -3135,7 +3137,7 @@ function submitOtp() {
             // $('#cover-spin').hide(0)
           } else {
             document.getElementById("returnMessage").innerHTML =
-              event.data.returnMessage;
+              DOMPurify.sanitize(event.data.returnMessage);
             $("#invalidReturnCode").modal("show");
           }
         } else {
@@ -3282,7 +3284,7 @@ function preSubmitCall() {
               // })
             } else {
               document.getElementById("returnMessage").innerHTML =
-                event.data.returnMessage;
+                DOMPurify.sanitize(event.data.returnMessage);
               $("#invalidReturnCode").modal("show");
             }
           }
@@ -3393,7 +3395,7 @@ function finalSubmitCall() {
             });
           } else {
             document.getElementById("returnMessage").innerHTML =
-              event.data.returnMessage;
+              DOMPurify.sanitize(event.data.returnMessage);
             $("#invalidReturnCode").modal("show");
           }
         } else {
