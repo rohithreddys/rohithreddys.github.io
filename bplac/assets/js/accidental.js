@@ -4,7 +4,7 @@ var stepper4
 var stepperForm
 var stepperFormEl */
 
-const DOMPurify = require("dompurify");
+import { sanitize } from "dompurify";
 
 var form = document.getElementById("accidental__form");
 var form_Bank = document.getElementById("bank_form");
@@ -2973,8 +2973,9 @@ function resendOtp(type) {
               otpTimer();
             } else {
               $("#otpExpiry").modal("hide");
-              document.getElementById("returnMessage").innerHTML =
-                DOMPurify.sanitize(event.data.returnMessage);
+              document.getElementById("returnMessage").innerHTML = sanitize(
+                event.data.returnMessage
+              );
               $("#invalidReturnCode").modal("show");
               // $('#otpPopUp').modal('hide');
             }
@@ -3136,8 +3137,9 @@ function submitOtp() {
             document.getElementById("otp").value = "";
             // $('#cover-spin').hide(0)
           } else {
-            document.getElementById("returnMessage").innerHTML =
-              DOMPurify.sanitize(event.data.returnMessage);
+            document.getElementById("returnMessage").innerHTML = sanitize(
+              event.data.returnMessage
+            );
             $("#invalidReturnCode").modal("show");
           }
         } else {
@@ -3283,8 +3285,9 @@ function preSubmitCall() {
 
               // })
             } else {
-              document.getElementById("returnMessage").innerHTML =
-                DOMPurify.sanitize(event.data.returnMessage);
+              document.getElementById("returnMessage").innerHTML = sanitize(
+                event.data.returnMessage
+              );
               $("#invalidReturnCode").modal("show");
             }
           }
@@ -3394,8 +3397,9 @@ function finalSubmitCall() {
               // console.log("Data -> ", data);
             });
           } else {
-            document.getElementById("returnMessage").innerHTML =
-              DOMPurify.sanitize(event.data.returnMessage);
+            document.getElementById("returnMessage").innerHTML = sanitize(
+              event.data.returnMessage
+            );
             $("#invalidReturnCode").modal("show");
           }
         } else {
