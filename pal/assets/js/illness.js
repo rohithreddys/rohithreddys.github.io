@@ -2284,7 +2284,7 @@ function getBankDetails() {
   window.addEventListener("message", function (eventData) {
     console.log("receiving presubmit event in acc");
     // console.log(event.data.event_code)
-    if (eventData.origin !== '"https://app.yellowmessenger.com"') return;
+    if (eventData.origin !== "https://app.yellowmessenger.com") return;
     try {
       if (eventData.data) {
         let event = JSON.parse(eventData.data);
